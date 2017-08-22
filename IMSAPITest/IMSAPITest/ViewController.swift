@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var bottomTipLabel: UILabel!
     
+    //上一级界面带回来的dic
+    var params: [String : Any]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +40,15 @@ class ViewController: UIViewController {
         }
         bottomTipLabel.text = string
         print(string)
+        
+        NetWorkManager.shareManager.requestAccessToken(params: params) { (isSuccess) in
+            print("")
+        }
+        
     }
     
     @IBAction func checkIncidentButtonPress(_ sender: Any) {
+        
     }
     
     @IBAction func getHistoryButtonPress(_ sender: Any) {
@@ -55,7 +64,7 @@ class ViewController: UIViewController {
         if segue.identifier == "setupapi" {
             let auth = segue.destination as! AuthTokenViewController
             auth.doneBlock = { dic in
-                print("this is \(dic)")
+                self.params = dic
             }
             print("可以传递数据了")
         }

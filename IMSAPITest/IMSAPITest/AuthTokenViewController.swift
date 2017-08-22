@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class AuthTokenViewController: UIViewController {
 
@@ -50,13 +51,21 @@ class AuthTokenViewController: UIViewController {
         dic.updateValue(incidentCheckOnlySwitch.isOn ? 1 : 0, forKey: "check")
 
         
-        doneBlock?(dic)
         
 //        NetWorkManager.shareManager.requestAccessToken(params: dic) { (isSuccess) in
 //            
 //        }
-        NetWorkManager.shareManager.requestCSRFToken()
-//        navigationController?.popViewController(animated: true)
+        NetWorkManager.shareManager.responseSerializer.acceptableContentTypes?.insert("text/html")
+        NetWorkManager.shareManager.responseSerializer = AFHTTPResponseSerializer()
+        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
+            if isSuccess {
+                dic.updateValue(NetWorkManager.shareManager.csrfToken ?? "", forKey: "csrfToken")
+                self.doneBlock?(dic)
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                print("网络错误")
+            }
+        }
     }
 
 

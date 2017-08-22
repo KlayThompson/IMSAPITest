@@ -30,10 +30,9 @@ class NetWorkManager: AFHTTPSessionManager {
         let instance = NetWorkManager()
         
         //设置反序列化
-        
-        instance.responseSerializer.acceptableContentTypes?.insert("text/html")
-        instance.responseSerializer = AFHTTPResponseSerializer()
-        instance.responseSerializer = AFJSONResponseSerializer()
+//        instance.responseSerializer.acceptableContentTypes?.insert("")
+//        instance.responseSerializer = AFHTTPResponseSerializer()
+//        instance.responseSerializer = AFJSONResponseSerializer()
         
         
         return instance
