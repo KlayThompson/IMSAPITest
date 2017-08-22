@@ -41,18 +41,22 @@ class AuthTokenViewController: UIViewController {
         
         var dic = [String : Any]()
         
-        dic.updateValue(userIdField.text ?? "", forKey: "UserId")
-        dic.updateValue(passwordField.text ?? "", forKey: "Password")
-        dic.updateValue(serialNumField.text ?? "L123456", forKey: "Serial Num")
-        dic.updateValue(latitudefield.text ?? "0", forKey: "Latitude")
-        dic.updateValue(longitudeField.text ?? "0", forKey: "Longitude")
-        dic.updateValue(historyLimitField.text ?? "10", forKey: "History Limit")
-        dic.updateValue(incidentCheckOnlySwitch.isOn, forKey: "Incident Check Only")
+        dic.updateValue(userIdField.text ?? "", forKey: "userId")
+        dic.updateValue(passwordField.text ?? "", forKey: "password")
+        dic.updateValue(serialNumField.text ?? "L123456", forKey: "s")
+        dic.updateValue(latitudefield.text ?? "0", forKey: "lat")
+        dic.updateValue(longitudeField.text ?? "0", forKey: "lng")
+        dic.updateValue(historyLimitField.text ?? "10", forKey: "limit")
+        dic.updateValue(incidentCheckOnlySwitch.isOn ? 1 : 0, forKey: "check")
 
         
         doneBlock?(dic)
         
-        navigationController?.popViewController(animated: true)
+//        NetWorkManager.shareManager.requestAccessToken(params: dic) { (isSuccess) in
+//            
+//        }
+        NetWorkManager.shareManager.requestCSRFToken()
+//        navigationController?.popViewController(animated: true)
     }
 
 

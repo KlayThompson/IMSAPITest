@@ -9,17 +9,23 @@
 /* Begin PBXBuildFile section */
 		3B1CD7C91F4C11A900D8725E /* ShowLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7C81F4C11A900D8725E /* ShowLogViewController.swift */; };
 		3B1CD7CC1F4C15A400D8725E /* IMSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7CB1F4C15A400D8725E /* IMSHelper.swift */; };
+		3B1CD7CF1F4C1C2D00D8725E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7CE1F4C1C2D00D8725E /* NetworkManager.swift */; };
+		3B1CD7D11F4C1D1200D8725E /* NetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7D01F4C1D1200D8725E /* NetWorkManager+Extension.swift */; };
 		3BCD0DAF1F4BE70400D15522 /* AuthTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD0DAE1F4BE70400D15522 /* AuthTokenViewController.swift */; };
 		3BDF389B1F4BC53C00B96ABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF389A1F4BC53C00B96ABF /* AppDelegate.swift */; };
 		3BDF389D1F4BC53C00B96ABF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF389C1F4BC53C00B96ABF /* ViewController.swift */; };
 		3BDF38A01F4BC53C00B96ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF389E1F4BC53C00B96ABF /* Main.storyboard */; };
 		3BDF38A21F4BC53C00B96ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF38A11F4BC53C00B96ABF /* Assets.xcassets */; };
 		3BDF38A51F4BC53C00B96ABF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF38A31F4BC53C00B96ABF /* LaunchScreen.storyboard */; };
+		3C621EBFCBE0A48E690969A2 /* Pods_IMSAPITest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB0C7AF24E737E89C64B80A /* Pods_IMSAPITest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		102D349EDB64382873E9E1D1 /* Pods-IMSAPITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMSAPITest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMSAPITest/Pods-IMSAPITest.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1CD7C81F4C11A900D8725E /* ShowLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLogViewController.swift; sourceTree = "<group>"; };
 		3B1CD7CB1F4C15A400D8725E /* IMSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMSHelper.swift; sourceTree = "<group>"; };
+		3B1CD7CE1F4C1C2D00D8725E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3B1CD7D01F4C1D1200D8725E /* NetWorkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetWorkManager+Extension.swift"; sourceTree = "<group>"; };
 		3BCD0DAE1F4BE70400D15522 /* AuthTokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenViewController.swift; sourceTree = "<group>"; };
 		3BDF38971F4BC53C00B96ABF /* IMSAPITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMSAPITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDF389A1F4BC53C00B96ABF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +34,8 @@
 		3BDF38A11F4BC53C00B96ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BDF38A41F4BC53C00B96ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BDF38A61F4BC53C00B96ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4892E5251CE2C015C06C06AB /* Pods-IMSAPITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMSAPITest.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMSAPITest/Pods-IMSAPITest.release.xcconfig"; sourceTree = "<group>"; };
+		FAB0C7AF24E737E89C64B80A /* Pods_IMSAPITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMSAPITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C621EBFCBE0A48E690969A2 /* Pods_IMSAPITest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				3B1CD7CB1F4C15A400D8725E /* IMSHelper.swift */,
+				3B1CD7CE1F4C1C2D00D8725E /* NetworkManager.swift */,
+				3B1CD7D01F4C1D1200D8725E /* NetWorkManager+Extension.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -54,6 +65,8 @@
 			children = (
 				3BDF38991F4BC53C00B96ABF /* IMSAPITest */,
 				3BDF38981F4BC53C00B96ABF /* Products */,
+				EB794A7FBC761B94D3A8CE8A /* Pods */,
+				A707D22378C067E3E536EF0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +94,23 @@
 			path = IMSAPITest;
 			sourceTree = "<group>";
 		};
+		A707D22378C067E3E536EF0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAB0C7AF24E737E89C64B80A /* Pods_IMSAPITest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB794A7FBC761B94D3A8CE8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				102D349EDB64382873E9E1D1 /* Pods-IMSAPITest.debug.xcconfig */,
+				4892E5251CE2C015C06C06AB /* Pods-IMSAPITest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BDF38A91F4BC53C00B96ABF /* Build configuration list for PBXNativeTarget "IMSAPITest" */;
 			buildPhases = (
+				A586B146F9D5F8040E1F40C1 /* [CP] Check Pods Manifest.lock */,
 				3BDF38931F4BC53C00B96ABF /* Sources */,
 				3BDF38941F4BC53C00B96ABF /* Frameworks */,
 				3BDF38951F4BC53C00B96ABF /* Resources */,
+				27F5E763898B1D6E4B92664A /* [CP] Embed Pods Frameworks */,
+				644C9C12BD60129BF05CE3D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,11 +182,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27F5E763898B1D6E4B92664A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IMSAPITest/Pods-IMSAPITest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		644C9C12BD60129BF05CE3D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IMSAPITest/Pods-IMSAPITest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A586B146F9D5F8040E1F40C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3BDF38931F4BC53C00B96ABF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1CD7CF1F4C1C2D00D8725E /* NetworkManager.swift in Sources */,
+				3B1CD7D11F4C1D1200D8725E /* NetWorkManager+Extension.swift in Sources */,
 				3B1CD7C91F4C11A900D8725E /* ShowLogViewController.swift in Sources */,
 				3BDF389D1F4BC53C00B96ABF /* ViewController.swift in Sources */,
 				3B1CD7CC1F4C15A400D8725E /* IMSHelper.swift in Sources */,
@@ -279,6 +362,7 @@
 		};
 		3BDF38AA1F4BC53C00B96ABF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 102D349EDB64382873E9E1D1 /* Pods-IMSAPITest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3BB36MF7NL;
@@ -292,6 +376,7 @@
 		};
 		3BDF38AB1F4BC53C00B96ABF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4892E5251CE2C015C06C06AB /* Pods-IMSAPITest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3BB36MF7NL;

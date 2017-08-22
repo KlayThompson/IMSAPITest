@@ -32,7 +32,11 @@ class ViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func getAuthTokenPress(_ sender: Any) {
-        
+        guard let string = NetWorkManager.shareManager.csrfToken else {
+            return
+        }
+        bottomTipLabel.text = string
+        print(string)
     }
     
     @IBAction func checkIncidentButtonPress(_ sender: Any) {

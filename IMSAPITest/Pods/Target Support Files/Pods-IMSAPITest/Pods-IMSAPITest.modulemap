@@ -1,0 +1,6 @@
+framework module Pods_IMSAPITest {
+  umbrella header "Pods-IMSAPITest-umbrella.h"
+
+  export *
+  module * { export * }
+}
