@@ -71,8 +71,8 @@
                                     <action selector="getProjectsButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGj-aS-VP8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label炸可视电话矿泉水法兰球阀" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isl-Vz-TTz">
-                                <rect key="frame" x="20" y="349" width="221" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup API Parameters first..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isl-Vz-TTz">
+                                <rect key="frame" x="20" y="349" width="193" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.92935490608215332" green="0.20577380240476786" blue="0.40454085411200436" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>

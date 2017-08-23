@@ -135,9 +135,7 @@ class ViewController: UIViewController {
 private extension ViewController {
 
     func setupUI() {
-       
-        bottomTipLabel.text = "开发手机话费卡垃圾收费卡红烧豆腐卡和房东拉口红的是福利卡号的福利卡号等法律卡萨丁话费卡好地方卡号东方卡"
-        
+               
         authTokenButton.layer.borderWidth = 1
         authTokenButton.layer.borderColor = UIColor.gray.cgColor
         
