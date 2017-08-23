@@ -35,30 +35,89 @@ class ViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func getAuthTokenPress(_ sender: Any) {
-        guard let string = NetWorkManager.shareManager.csrfToken else {
-            return
-        }
-        bottomTipLabel.text = string
-        print(string)
-        
-        NetWorkManager.shareManager.requestAccessToken(params: params) { (isSuccess) in
-            print("")
+//        guard let string = NetWorkManager.shareManager.csrfToken else {
+//            return
+//        }
+        bottomTipLabel.text = "get authToken..."
+        //因为每次的csrfToken必须更新，所以目前采用较笨的方法，每次请求网络前都调用一次获取csrfToken方法
+        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
+            if isSuccess {
+                //更新参数的csrfToken
+                self.params?.updateValue(NetWorkManager.shareManager.csrfToken ?? "", forKey: "fuel_csrf_token")
+                NetWorkManager.shareManager.requestAccessToken(params: self.params) { (isSuccess, josn) in
+                    if isSuccess {
+                        guard let json = josn else { return }
+                        let jsonDic = json as! [String : Any]
+                        self.bottomTipLabel.text = jsonDic.description
+                    } else {
+                        self.bottomTipLabel.text = "get authToken error"
+                    }
+                    
+                }
+            } else {
+                self.bottomTipLabel.text = "get csrfToken error..."
+            }
         }
         
     }
     
     @IBAction func checkIncidentButtonPress(_ sender: Any) {
-        
+        bottomTipLabel.text = "check incident now..."
+        //因为每次的csrfToken必须更新，所以目前采用较笨的方法，每次请求网络前都调用一次获取csrfToken方法
+        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
+            if isSuccess {
+                NetWorkManager.shareManager.requestCheckIncidentWithAuthToken(params: self.params, completion: { (isSuccess, jsonObj) in
+                    if isSuccess {
+                        let jsonDic = jsonObj as? [String : Any]
+                        self.bottomTipLabel.text = jsonDic?.description
+                    } else {
+                        self.bottomTipLabel.text = "check incident error..."
+                    }
+                })
+            } else {
+                self.bottomTipLabel.text = "get csrfToken error..."
+            }
+        }
     }
     
     @IBAction func getHistoryButtonPress(_ sender: Any) {
+        bottomTipLabel.text = "getting history now..."
+        //因为每次的csrfToken必须更新，所以目前采用较笨的方法，每次请求网络前都调用一次获取csrfToken方法
+        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
+            if isSuccess {
+                NetWorkManager.shareManager.requestHistoryWithAuthToken(params: self.params, completion: { (isSuccess, jsonObj) in
+                    if isSuccess {
+                        let jsonDic = jsonObj as? [String : Any]
+                        self.bottomTipLabel.text = jsonDic?.description
+                    } else {
+                        self.bottomTipLabel.text = "get history error..."
+                    }
+                })
+            } else {
+                self.bottomTipLabel.text = "get csrfToken error..."
+            }
+        }
     }
     
     @IBAction func getProjectsButtonPress(_ sender: Any) {
+        bottomTipLabel.text = "getting projects now..."
+        //因为每次的csrfToken必须更新，所以目前采用较笨的方法，每次请求网络前都调用一次获取csrfToken方法
+        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
+            if isSuccess {
+                NetWorkManager.shareManager.requestProjectsWithAuthToken(params: self.params, completion: { (isSuccess, jsonObj) in
+                    if isSuccess {
+                        let jsonDic = jsonObj as? [String : Any]
+                        self.bottomTipLabel.text = jsonDic?.description
+                    } else {
+                        self.bottomTipLabel.text = "get projects error..."
+                    }
+                })
+            } else {
+                self.bottomTipLabel.text = "get csrfToken error..."
+            }
+        }
     }
     
-    @IBAction func showLogButtonPress(_ sender: Any) {
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "setupapi" {

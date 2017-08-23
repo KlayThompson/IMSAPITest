@@ -30,7 +30,7 @@ extension NetWorkManager {
 // MARK: - 获取用户AccessToken
 extension NetWorkManager {
     
-    func requestAccessToken(params: [String : Any]?, completion: @escaping (_ isSucces: Bool)->()) {
+    func requestAccessToken(params: [String : Any]?, completion: @escaping (_ isSucces: Bool, _ json: AnyObject?)->()) {
         
         let urlString = IMS_SERVER_NAME + IMS_AUTH_URL
         
@@ -38,8 +38,76 @@ extension NetWorkManager {
         requestNetWork(requestMethod: .POST, url: urlString, params: params) { (json, isSuccess) in
             print("获取AccessToken -----\(String(describing: json))")
             
-          
+            if isSuccess {
+                let jsonDic = json as? [String : Any]
+                self.authToken = jsonDic?["authToken"] as? String
+            }
+            //回调
+            completion(isSuccess, json)
             
+        }
+    }
+}
+
+// MARK: - 获取Incident
+extension NetWorkManager {
+    
+    func requestCheckIncidentWithAuthToken(params: [String : Any]?, completion: @escaping (_ isSuccess: Bool, _ json: AnyObject?)->()) {
+        let urlString = IMS_SERVER_NAME + IMS_CREATE_INCIDENT
+        
+        var param = params
+        if param == nil {
+            param = [String : Any]()
+        }
+        param?["fuel_csrf_token"] = csrfToken ?? ""
+        
+        //参数还需拼接deviceId和project中的一个code
+        param?["appid"] = "3"
+        param?["d"] = udid ?? ""
+        requestNetWork(requestMethod: .POST, url: urlString, params: param) { (jsonObj, isSuccess) in
+            completion(isSuccess, jsonObj)
+        }
+    }
+}
+
+// MARK: - 获取history
+extension NetWorkManager {
+    
+    func requestHistoryWithAuthToken(params: [String : Any]?, completion: @escaping (_ isSuccess: Bool, _ json: AnyObject?)->()) {
+        let urlString = IMS_SERVER_NAME + IMS_GET_HISTORY
+        
+        var param = params
+        if param == nil {
+            param = [String : Any]()
+        }
+        param?["fuel_csrf_token"] = csrfToken ?? ""
+        
+        //参数还需拼接deviceId
+        param?["d"] = udid ?? ""
+        
+        requestNetWorkWithToken(url: urlString, params: param) { (jsonObj, isSuccess) in
+            completion(isSuccess, jsonObj)
+        }
+    }
+}
+
+// MARK: - 获取projects
+extension NetWorkManager {
+    
+    func requestProjectsWithAuthToken(params: [String : Any]?, completion: @escaping (_ isSuccess: Bool, _ json: AnyObject?)->()) {
+        let urlString = IMS_SERVER_NAME + IMS_GET_PROJECTS
+        
+        var param = params
+        if param == nil {
+            param = [String : Any]()
+        }
+        param?["fuel_csrf_token"] = csrfToken ?? ""
+        
+        //参数还需拼接deviceId
+        param?["d"] = udid ?? ""
+        
+        requestNetWorkWithToken(url: urlString, params: param) { (jsonObj, isSuccess) in
+            completion(isSuccess, jsonObj)
         }
     }
 }

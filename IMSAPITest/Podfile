@@ -6,6 +6,6 @@ target 'IMSAPITest' do
   use_frameworks!
 
   # Pods for IMSAPITest
-
+pod 'ZKUDID'
 pod "AFNetworking"
 end

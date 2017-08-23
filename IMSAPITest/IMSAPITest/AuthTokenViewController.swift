@@ -48,24 +48,10 @@ class AuthTokenViewController: UIViewController {
         dic.updateValue(latitudefield.text ?? "0", forKey: "lat")
         dic.updateValue(longitudeField.text ?? "0", forKey: "lng")
         dic.updateValue(historyLimitField.text ?? "10", forKey: "limit")
-        dic.updateValue(incidentCheckOnlySwitch.isOn ? 1 : 0, forKey: "check")
-
-        
-        
-//        NetWorkManager.shareManager.requestAccessToken(params: dic) { (isSuccess) in
-//            
-//        }
-        NetWorkManager.shareManager.responseSerializer.acceptableContentTypes?.insert("text/html")
-        NetWorkManager.shareManager.responseSerializer = AFHTTPResponseSerializer()
-        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
-            if isSuccess {
-                dic.updateValue(NetWorkManager.shareManager.csrfToken ?? "", forKey: "csrfToken")
-                self.doneBlock?(dic)
-                self.navigationController?.popViewController(animated: true)
-            } else {
-                print("网络错误")
-            }
-        }
+        dic.updateValue(incidentCheckOnlySwitch.isOn ? "1" : "0", forKey: "check")
+        dic.updateValue(NetWorkManager.shareManager.csrfToken ?? "", forKey: "fuel_csrf_token")
+        doneBlock?(dic)
+        navigationController?.popViewController(animated: true)
     }
 
 

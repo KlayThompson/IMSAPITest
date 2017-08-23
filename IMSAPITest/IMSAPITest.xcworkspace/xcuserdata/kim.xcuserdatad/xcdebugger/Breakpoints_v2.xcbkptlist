@@ -9,46 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IMSAPITest/NetworkManager/NetWorkManager+Extension.swift"
-            timestampString = "525086669.011036"
+            filePath = "IMSAPITest/AppDelegate.swift"
+            timestampString = "525166682.004809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "requestAccessToken(params:completion:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IMSAPITest.NetWorkManager.requestAccessToken (params : Swift.Dictionary&lt;Swift.String, Any&gt;, completion : (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "IMSAPITest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kim/Desktop/PROJECT/IMSAPITest/IMSAPITest/IMSAPITest/NetworkManager/NetWorkManager+Extension.swift"
-                  timestampString = "525087088.374124"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "159">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IMSAPITest.NetWorkManager.(requestAccessToken (params : Swift.Dictionary&lt;Swift.String, Any&gt;, completion : (Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "IMSAPITest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kim/Desktop/PROJECT/IMSAPITest/IMSAPITest/IMSAPITest/NetworkManager/NetWorkManager+Extension.swift"
-                  timestampString = "525087088.375759"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

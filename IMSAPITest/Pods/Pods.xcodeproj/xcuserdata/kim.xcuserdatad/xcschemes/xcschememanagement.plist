@@ -14,15 +14,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ZKUDID.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4B7145C4DE0FCF392F0D80F76ED11A09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FACC46085AD62C2648A6CD9F702944CC</key>
+		<key>FAB74312B162EF3AF6DEFD2B1F79B531</key>
 		<dict>
 			<key>primary</key>
 			<true/>
