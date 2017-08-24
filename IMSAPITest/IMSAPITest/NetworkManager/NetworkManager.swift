@@ -33,11 +33,16 @@ class NetWorkManager: AFHTTPSessionManager {
     }()
     
     
+    /// authToken
     var authToken: String?
     
+    /// csrfToken
     var csrfToken: String?
     
+    /// 设备表示
     var udid: String?
+    
+    var logString: String?
     
     
     /// 用户登录状态

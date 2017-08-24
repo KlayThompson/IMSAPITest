@@ -11,6 +11,7 @@
 		3B1CD7CC1F4C15A400D8725E /* IMSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7CB1F4C15A400D8725E /* IMSHelper.swift */; };
 		3B1CD7CF1F4C1C2D00D8725E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7CE1F4C1C2D00D8725E /* NetworkManager.swift */; };
 		3B1CD7D11F4C1D1200D8725E /* NetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7D01F4C1D1200D8725E /* NetWorkManager+Extension.swift */; };
+		3B1CD7E31F4E815000D8725E /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CD7E21F4E815000D8725E /* LogCell.swift */; };
 		3BCD0DAF1F4BE70400D15522 /* AuthTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD0DAE1F4BE70400D15522 /* AuthTokenViewController.swift */; };
 		3BDF389B1F4BC53C00B96ABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF389A1F4BC53C00B96ABF /* AppDelegate.swift */; };
 		3BDF389D1F4BC53C00B96ABF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF389C1F4BC53C00B96ABF /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		3B1CD7CB1F4C15A400D8725E /* IMSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMSHelper.swift; sourceTree = "<group>"; };
 		3B1CD7CE1F4C1C2D00D8725E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3B1CD7D01F4C1D1200D8725E /* NetWorkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetWorkManager+Extension.swift"; sourceTree = "<group>"; };
+		3B1CD7E21F4E815000D8725E /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		3BCD0DAE1F4BE70400D15522 /* AuthTokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenViewController.swift; sourceTree = "<group>"; };
 		3BDF38971F4BC53C00B96ABF /* IMSAPITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMSAPITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDF389A1F4BC53C00B96ABF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				3BDF389C1F4BC53C00B96ABF /* ViewController.swift */,
 				3BCD0DAE1F4BE70400D15522 /* AuthTokenViewController.swift */,
 				3B1CD7C81F4C11A900D8725E /* ShowLogViewController.swift */,
+				3B1CD7E21F4E815000D8725E /* LogCell.swift */,
 				3B1CD7CA1F4C159500D8725E /* NetworkManager */,
 				3BDF389E1F4BC53C00B96ABF /* Main.storyboard */,
 				3BDF38A11F4BC53C00B96ABF /* Assets.xcassets */,
@@ -237,6 +240,7 @@
 			files = (
 				3B1CD7CF1F4C1C2D00D8725E /* NetworkManager.swift in Sources */,
 				3B1CD7D11F4C1D1200D8725E /* NetWorkManager+Extension.swift in Sources */,
+				3B1CD7E31F4E815000D8725E /* LogCell.swift in Sources */,
 				3B1CD7C91F4C11A900D8725E /* ShowLogViewController.swift in Sources */,
 				3BDF389D1F4BC53C00B96ABF /* ViewController.swift in Sources */,
 				3B1CD7CC1F4C15A400D8725E /* IMSHelper.swift in Sources */,
