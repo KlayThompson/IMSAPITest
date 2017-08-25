@@ -118,6 +118,7 @@ class NetWorkManager: AFHTTPSessionManager {
             paramsString.remove(at: paramsString.index(before: paramsString.endIndex))
             paramsString = url + paramsString
             print("接口URL ----:\(paramsString)")
+            LOG_STRING = "接口URL ----:\(paramsString)" + LOG_STRING
         } else {
             post(url, parameters: params, progress:nil, success: success, failure: failure)
         }

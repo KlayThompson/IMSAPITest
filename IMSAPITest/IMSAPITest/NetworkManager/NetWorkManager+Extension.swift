@@ -11,7 +11,7 @@ import Foundation
 // MARK: - 获取csrfToken
 extension NetWorkManager {
 
-    func requestCSRFToken(completion: @escaping (_ isSuccess: Bool)->()) {
+    func requestCSRFToken(completion: @escaping (_ isSuccess: Bool, _ jsonObject: AnyObject?)->()) {
         
         let urlString = IMS_SERVER_NAME + IMS_GET_CSRF_URL
 
@@ -20,7 +20,7 @@ extension NetWorkManager {
             let jsonDic = json as? NSDictionary
             self.csrfToken = jsonDic?.object(forKey: "csrfToken") as? String
             print(json ?? "0")
-            completion(isSuccess)
+            completion(isSuccess,json)
         }
         
     }

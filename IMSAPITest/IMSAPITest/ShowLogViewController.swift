@@ -14,16 +14,13 @@ class ShowLogViewController: UIViewController {
     
     let cellId = "cellId"
     
-    var logString = ""
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 500
         
-        logString = "sdflksjdl;ajl;kjljdasljkflkasdjfklasdjflkasjdfhjkasdhfljksadhflkajsdhfklajhdfkladhfklahfkdshfkahdflkahdsfklahksdfhalkdhflakdhflakhdflkadhfalkshflksdhfklsdhflkshdflkasdhflksjdhfalksdfhaklsdfhkasdjhfakjshdfklasjdhfklajhlkdsjhflkajhdflkahdflkahjsdflkajhsdjfklhasldkfhalksdfhalksdflksjdl;ajl;kjljdasljkflkasdjfklasdjflkasjdfhjkasdhfljksadhflkajsdhfklajhdfkladhfklahfkdshfkahdflkahdsfklahksdfhalkdhflakdhflakhdflkadhfalkshflksdhfklsdhflkshdflkasdhflksjdhfalksdfhaklsdfhkasdjhfakjshdfklasjdhfklajhlkdsjhflkajhdflkahdflkahjsdflkajhsdjfklhasldkfhalksdfhalksdflksjdl;ajl;kjljdasljkflkasdjfklasdjflkasjdfhjkasdhfljksadhflkajsdhfklajhdfkladhfklahfkdshfkahdflkahdsfklahksdfhalkdhflakdhflakhdflkadhfalkshflksdhfklsdhflkshdflkasdhflksjdhfalksdfhaklsdfhkasdjhfakjshdfklasjdhfklajhlkdsjhflkajhdflkahdflkahjsdflkajhsdjfklhasldkfhalksdfhalksdflksjdl;ajl;kjljdasljkflkasdjfklasdjflkasjdfhjkasdhfljksadhflkajsdhfklajhdfkladhfklahfkdshfkahdflkahdsfklahksdfhalkdhflakdhflakhdflkadhfalkshflksdhfklsdhflkshdflkasdhflksjdhfalksdfhaklsdfhkasdjhfakjshdfklasjdhfklajhlkdsjhflkajhdflkahdflkahjsdflkajhsdjfklhasldkfhalksdfhalksdflksjdl;ajl;kjljdasljkflkasdjfklasdjflkasjdfhjkasdhfljksadhflkajsdhfklajhdfkladhfklahfkdshfkahdflkahdsfklahksdfhalkdhflakdhflakhdflkadhfalkshflksdhfklsdhflkshdflkasdhflksjdhfalksdfhaklsdfhkasdjhfakjshdfklasjdhfklajhlkdsjhflkajhdflkahdflkahjsdflkajhsdjfklhasldkfhalksdfhalk"
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,21 +29,19 @@ class ShowLogViewController: UIViewController {
     }
     
     @IBAction func clearLogButtonPress(_ sender: Any) {
-        logString = ""
+        LOG_STRING = ""
         tableView.reloadData()
         print("clear log...")
     }
 
     @IBAction func sendLogButtonPress(_ sender: Any) {
         //分享
-        let activityController = UIActivityViewController(activityItems: [logString], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [LOG_STRING], applicationActivities: nil)
         
         self.present(activityController, animated: true, completion: nil)
         print("send log...")
     }
     
-   
-
 }
 
 extension ShowLogViewController: UITableViewDataSource {
@@ -59,7 +54,7 @@ extension ShowLogViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LogCell
         
-        cell.logLabel.text = logString
+        cell.logLabel.text = LOG_STRING
         
         return cell
     }

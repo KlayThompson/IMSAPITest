@@ -20,24 +20,15 @@ class AuthTokenViewController: UIViewController {
     @IBOutlet weak var longitudeField: UITextField!
     @IBOutlet weak var historyLimitField: UITextField!
     @IBOutlet weak var incidentCheckOnlySwitch: UISwitch!
-    
-    
-    
-    
-    
+
     /// 点击完成回调闭包
     var doneBlock: ((_ dic: [String : Any]) -> ())?
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
-    
     @IBAction func doneButtonPress(_ sender: Any) {
         
         var dic = [String : Any]()
@@ -52,7 +43,8 @@ class AuthTokenViewController: UIViewController {
         dic.updateValue(NetWorkManager.shareManager.csrfToken ?? "", forKey: "fuel_csrf_token")
         doneBlock?(dic)
         navigationController?.popViewController(animated: true)
+        
+        //存储到本地一份，下次启动直接读取
+        UserDefaults.standard.setValue(dic, forKey: IMS_API_PARAMETERS)
     }
-
-
 }

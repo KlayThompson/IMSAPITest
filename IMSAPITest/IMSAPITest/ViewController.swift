@@ -34,8 +34,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logString = "Setup API Parameters first..."
         setupUI()
+        
+        //取出本地的api参数字典
+        let dic = UserDefaults.standard.object(forKey: IMS_API_PARAMETERS) as? [String : Any]
+        
+        guard let paramDic = dic else {
+            logString = "Setup API Parameters first..."
+            logTableView.reloadData()
+            return
+        }
+        params = paramDic
+        print("这")
     }
 
     // MARK: - Actions
@@ -44,8 +54,10 @@ class ViewController: UIViewController {
         logString = "get authToken..."
         logTableView.reloadData()
         //因为每次的csrfToken必须更新，所以目前采用较笨的方法，每次请求网络前都调用一次获取csrfToken方法
-        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
+        NetWorkManager.shareManager.requestCSRFToken { (isSuccess, jsonObj) in
             if isSuccess {
+                LOG_STRING = "获取AuthToken的csrfToken成功：\(String(describing: jsonObj))"
+                
                 //更新参数的csrfToken
                 self.params?.updateValue(NetWorkManager.shareManager.csrfToken ?? "", forKey: "fuel_csrf_token")
                 NetWorkManager.shareManager.requestAccessToken(params: self.params) { (isSuccess, josn) in
@@ -53,6 +65,7 @@ class ViewController: UIViewController {
                         guard let json = josn else { return }
                         let jsonDic = json as! [String : Any]
                         self.logString = jsonDic.description
+                        LOG_STRING = "   获取AuthToekn成功： \(jsonDic.description)" + LOG_STRING
                     } else {
                         self.logString = "get authToken error"
                     }
@@ -70,12 +83,15 @@ class ViewController: UIViewController {
         logString = "check incident now..."
         logTableView.reloadData()
         //因为每次的csrfToken必须更新，所以目前采用较笨的方法，每次请求网络前都调用一次获取csrfToken方法
-        NetWorkManager.shareManager.requestCSRFToken { (isSuccess) in
+        NetWorkManager.shareManager.requestCSRFToken { (isSuccess, jsonObj) in
             if isSuccess {
+                LOG_STRING = "获取checkIncident的csrfToken成功：\(String(describing: jsonObj))" + LOG_STRING
+
                 NetWorkManager.shareManager.requestCheckIncidentWithAuthToken(params: self.params, completion: { (isSuccess, jsonObj) in
                     if isSuccess {
                         let jsonDic = jsonObj as? [String : Any]
                         self.logString = jsonDic?.description
+                        LOG_STRING = "check incident 成功，结果为：\(String(describing: jsonDic?.description))" + LOG_STRING
                     } else {
                         self.logString = "check incident error..."
                     }
@@ -95,6 +111,7 @@ class ViewController: UIViewController {
             if isSuccess {
                 let jsonDic = jsonObj as? [String : Any]
                 self.logString = jsonDic?.description
+                LOG_STRING = "Get History 成功：\(String(describing: jsonDic?.description))" + LOG_STRING
             } else {
                 self.logString = "get history error..."
             }
@@ -109,7 +126,7 @@ class ViewController: UIViewController {
             if isSuccess {
                 let jsonDic = jsonObj as? [String : Any]
                 self.logString = jsonDic?.description
-//                self.logTableView.reloadData()
+                LOG_STRING = "Get Projects 成功：\(String(describing: jsonDic?.description))" + LOG_STRING
             } else {
                 self.logString = "get projects error..."
             }
@@ -123,6 +140,7 @@ class ViewController: UIViewController {
             let auth = segue.destination as! AuthTokenViewController
             auth.doneBlock = { dic in
                 self.params = dic
+                self.logString = ""
             }
             print("可以传递数据了")
         }
@@ -130,6 +148,7 @@ class ViewController: UIViewController {
     
 }
 
+// MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

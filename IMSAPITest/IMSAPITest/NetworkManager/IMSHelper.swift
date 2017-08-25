@@ -15,6 +15,10 @@ let IMS_CREATE_INCIDENT 	= "incident"
 let IMS_GET_HISTORY      	= "history"
 let IMS_GET_PROJECTS      	= "projects"
 
+let IMS_API_PARAMETERS = "apiParameters"
+
+var LOG_STRING = ""
+
 
 struct IMSHelper {
     
