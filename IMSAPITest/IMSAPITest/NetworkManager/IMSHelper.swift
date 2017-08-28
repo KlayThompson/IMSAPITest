@@ -23,7 +23,4 @@ var LOG_STRING = ""
 struct IMSHelper {
     
     
-    func sss() {
-        
-    }
 }

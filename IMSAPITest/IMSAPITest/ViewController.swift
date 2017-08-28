@@ -45,7 +45,6 @@ class ViewController: UIViewController {
             return
         }
         params = paramDic
-        print("这")
     }
 
     // MARK: - Actions
